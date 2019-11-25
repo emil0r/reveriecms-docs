@@ -1,0 +1,1 @@
+- xref:structure/project.adoc[Structure of a project]

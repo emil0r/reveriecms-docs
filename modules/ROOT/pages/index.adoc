@@ -1,0 +1,5 @@
+= reverie
+
+reverie is a CMS written for power users, in Clojure.
+
+From when CMSs were popuralized for the web from the late 90s and early 2000s they have grown in power and complexity. Typically a CMS has to appeal to a number of stake holders, including but not limited, to designers, programmers, DBAs, editors, publishers and users. reverie is an attempt to appeal all of them, in equal portion, and giving everyone all the knobs and switches they could wish for.

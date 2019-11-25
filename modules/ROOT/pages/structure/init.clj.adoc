@@ -1,0 +1,3 @@
+= init.clj
+
+init.clj is the file which holds all startup details of reverie and the site.
