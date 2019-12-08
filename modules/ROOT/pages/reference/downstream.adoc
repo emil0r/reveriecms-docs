@@ -4,7 +4,8 @@ Used for passing values on a per request/response cycle basis. Pratically what i
 
 == example
 
-```clojure
+[source,clojure]
+----
 
 (require '[reverie.downstream :as downstream])
 (require '[reverie.page :as page])
@@ -20,3 +21,4 @@ Used for passing values on a per request/response cycle basis. Pratically what i
     [:title (or (downstream/get :passed-down-title) (page/title page))]
     ;; more code...
     ])
+----
