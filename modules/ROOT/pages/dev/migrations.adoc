@@ -1,0 +1,73 @@
+= Migrations
+
+xref:dev/reverie-dev.adoc[reverie-dev] holds helper functions for creating and managing migrations.
+
+
+== reverie.dev.migration
+
+Namespace for migrating and rolling back migrations.
+
+[cols="3", options="header"]
+|===
+
+| command
+| type
+| name
+
+| `(migrate type name)`
+| `#{:object :module :app :raw-page}`
+| name of object/module/app or the path to the raw page (endpoint)
+
+| `(rollback type name)`
+| `#{:object :module :app :raw-page}`
+| name of object/module/app or the path to the raw page (endpoint)
+
+|===
+
+== reverie.dev.object
+
+Namespace for handling objects. For migrations there are two for adding and removing migrations.
+
+[cols="3", options="header"]
+|===
+| namespace
+| function
+| args
+
+| reverie.dev.object
+| add-migration
+| `[name migration-name]` +
+  `[opts name migration-name]`
+
+| reverie.dev.object
+| remove-migration
+| `[name migration-name]` +
+  `[opts name migration-name]`
+|===
+
+
+== reverie.dev.module
+
+Namespace for handling modules. For migrations there are two for adding and removing migrations.
+
+[cols="3", options="header"]
+|===
+| namespace
+| function
+| args
+
+| reverie.dev.module
+| add-migration
+| `[name migration-name]` +
+  `[opts name migration-name]`
+
+| reverie.dev.module
+| remove-migration
+| `[name migration-name]` +
+  `[opts name migration-name]`
+|===
+
+
+== reverie.dev.app and reverie.dev.page
+
+While both app and page technically support migrations, it's not encouraged to use them that way. Objects and modules should cover most things you'd wish, and it's always possible to add migrations xref:reference/migration.adoc[manually].

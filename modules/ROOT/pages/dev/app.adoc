@@ -1,0 +1,21 @@
+= reverie.dev.app
+
+Helper namespace for dealing with apps during development.
+
+== create
+
+Create a new app.
+
+.reverie.dev.app/create
+[source,clojure]
+----
+(create 'myapp)
+(create {:root "project-name.my-dest-for-apps"
+         :root-path "project-name/my-dest-for-apps"
+         :override? true}
+        'myapp)
+----
+
+If the app exists an exception is thrown. Use `:override? true` in `opts` to recreate the app.
+
+NOTE: By default the app will show up under `project-name/apps/myapp.clj`.

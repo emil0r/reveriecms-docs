@@ -1,0 +1,55 @@
+= reverie.dev.object
+
+Helper namespace for dealing with objects during development.
+
+== create
+
+Create a new object.
+
+.reverie.dev.object/create
+[source,clojure]
+----
+(create 'myobject)
+(create {:root "project-name.my-dest-for-objects"
+         :root-path "project-name/my-dest-for-objects"
+         :override? true}
+        'myobject)
+----
+
+If the object exists an exception is thrown. Use `:override? true` in `opts` to recreate the object.
+
+NOTE: By default the object will use the project name + objects as the path for the object. Typically it will show up under `project-name/objects/myobject.clj` with migrations showing up under `project-name/objects/migrations/myobject`.
+
+
+== add-migration
+
+Create a new migration for the object.
+
+.reverie.dev.object/add-migration
+[source,clojure]
+----
+(add-migration 'myobject "foobar")
+(add-migration {:root "project-name.my-dest-for-objects"
+                :root-path "project-name/my-dest-for-objects"}
+        'myobject "foobar")
+----
+
+If the migration exists an exception is thrown. You will need to use `remove-migration` before you can add the same migration again.
+
+TIP: By default the migration will show up under `project-name/objects/migrations/myobject`.
+
+
+== remove-migration
+
+Remove an existing migration for the object.
+
+.reverie.dev.object/remove-migration
+[source,clojure]
+----
+(remove-migration 'myobject "foobar")
+(remove-migration {:root "project-name.my-dest-for-objects"
+                   :root-path "project-name/my-dest-for-objects"}
+        'myobject "foobar")
+----
+
+WARNING: This is a destructive command that will delete files from your hard drive. Use with caution.

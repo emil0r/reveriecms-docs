@@ -1,3 +1,13 @@
 = reverie-dev
 
-placeholder
+reverie-dev is a helper library meant for developers.
+
+NOTE: https://github.com/emil0r/reverie-dev[github.com/emil0r/reverie-dev]
+
+It holds helper functions for the following
+
+* xref:dev/app.adoc[app]
+* xref:dev/migrations.adoc[migrations]
+* xref:dev/module.adoc[module]
+* xref:dev/object.adoc[object]
+* xref:dev/page.adoc[page]

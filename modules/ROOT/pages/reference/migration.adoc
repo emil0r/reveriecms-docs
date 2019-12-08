@@ -1,0 +1,24 @@
+= Migration
+
+TIP: Read up on migrations as a xref:concepts/migrations.adoc[concept].
+
+Migrations can be added through xref:reference/object.adoc[objects], xref:reference/module.adoc[modules], apps, endpoints and manually.
+
+== Manual migration
+
+[cols="3", options="header"]
+|===
+| namespace
+| function
+| args
+
+| reverie.migrator
+| add-migration!
+| `[name migration]` +
+  `[name type migration]`
+
+| reverie.migrator
+| remove-migration!
+| `[name]` +
+  `[name type]`
+|===

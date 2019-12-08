@@ -21,4 +21,4 @@ The common theme among all the examples is that you have something you wish to r
 
 == Reference
 
-For more info see xref:reference/object.adoc[reverie.object]
+For more info see xref:reference/object.adoc[reference/object]

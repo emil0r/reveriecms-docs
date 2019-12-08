@@ -1,0 +1,21 @@
+= reverie.dev.page
+
+Helper namespace for dealing with pages during development.
+
+== create
+
+Create a new page.
+
+.reverie.dev.page/create
+[source,clojure]
+----
+(create "my/path/to/my/new/page")
+(create {:root "project-name.my-dest-for-pages"
+         :root-path "project-name/my-dest-for-pages"
+         :override? true}
+        "my/path/to/my/new/page")
+----
+
+If the page exists an exception is thrown. Use `:override? true` in `opts` to recreate the page.
+
+NOTE: By default the page will show up under `project-name/endpoints/mypage.clj`.
