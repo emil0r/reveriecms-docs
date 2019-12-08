@@ -1,0 +1,7 @@
+= Modules
+
+Modules encapsulates data administration. Data input, manipulation and deletion is meant to be handled by modules.
+
+== Reference
+
+For more info look at xref:reference/module.md[reference/module]

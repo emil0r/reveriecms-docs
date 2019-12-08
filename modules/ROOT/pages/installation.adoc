@@ -1,0 +1,9 @@
+= Installation
+
+The easiest way to install reverie is the following.
+
+. Run `lein new reverie <name-of-project> +docker-compose` in the directory where you want the project installed.
+. Run `docker-compose up -d`
+. Run `lein run :command :init`
+. Fire up your editor and go into REPL mode. Navigate to `dev/dev.clj` and follow instructions.
+. Navigate to http://127.0.0.1:3000[127.0.0.1:3000] for the website once it's up and running. Admin is available under http://127.0.0.1:3000/admin[127.0.0.1:3000/admin].

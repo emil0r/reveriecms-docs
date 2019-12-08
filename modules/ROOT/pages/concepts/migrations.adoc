@@ -1,0 +1,19 @@
+# Migrations
+
+Like any application that needs to save data over time, reverie uses a database as its data storage layer. Data change over time, and so the database needs to change over time as well. Migrations are a way to handle these changes over time in a practical and managed way, that allows for reproducing the steps of changing the database on any machine.
+
+A migration either goes up, or it goes down. A migration that goes up moves forward (migration), while a migration that goes down moves backwards (rollback). Ideally a database that has migrated up can at a later stage migrate down and arrive at a previous state. Thereforce, a down migration undoes what an up migration does, hence the term rollback: It rolls back the database to a previous state.
+
+Sometimes changes needs to be split up over migrations. A typical example would be to have a column in a table called name that you wish to split up into first_name and last_name. This could be accomplished with three migrations.
+
+* First migration adds first_name and last_name as columns
+* Second migration splits the data in the column name by whitespace and adds them to first_name and last_name respectively
+* Third migrations removes the name column
+
+The down migrations would do the above, but in reverse.
+
+== Practical considerations
+
+Migrations in reverie are added manually and can either be pure SQL or Clojure code. Main reason that they're manual is that reverie doesn't use an ORM and so cannot know how the database is meant to look like. The second reason is that ORMs limit what you can do in a database, and by giving up control of that and only handling the when of migrations, and not the how, all the power of SQL is given to the developer.
+
+The migrations can either be added manually or you can use xref:dev/migrations.adoc[dev/migrations] to help you with creating the minimum boilerplate needed.

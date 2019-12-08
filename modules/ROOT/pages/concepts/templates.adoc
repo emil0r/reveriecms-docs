@@ -1,0 +1,26 @@
+# Templates
+
+A template defines the HTML for a page and defines the areas within the template. Conceptually templates in reverie don't fullfill the role of content holders. That job is left for objects and apps. Typically a template instead defines the general structure of a HTML page and defines areas inside the template into which content can be put
+
+Templates are always used by the reverie.page/Page implementation and can be used by both the reverie.page/AppPage and reverie.page/RawPage implementations.
+
+reverie uses https://github.com/weavejester/hiccup[hiccup] as default for HTML rendering.
+
+
+```clojure
+(ns some-namespace
+  (:require [hiccup.page :refer [html5]]
+            [reverie.core :refer [deftemplate]]))
+
+;; define a template function. return anything that is ring compatible
+(defn main-template [request page properties params]
+  (html5
+    [:head
+      [:title "my main template"]]
+    [:body
+      "body"]))
+
+;; define a template main and tell reverie to use the
+;; function main-template for the template
+(deftemplate main main-template)
+```
