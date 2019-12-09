@@ -44,5 +44,6 @@ reverie is a CMS written for power users, in Clojure.
 * xref:reference/object.adoc[object]
 * xref:reference/page.adoc[page]
 * xref:reference/renderer.adoc[renderer]
+* xref:reference/route.adoc[route]
 * xref:reference/system.adoc[system]
 
